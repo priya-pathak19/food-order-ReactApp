@@ -1,0 +1,20 @@
+.card{
+    margin-bottom: 4rem;
+    width: 100%;
+}
+
+
+.inputNum{
+    width:50px;
+    align-items: right;
+    margin-right: 6px;
+    border: none;
+}
+
+.Addbutton{
+    display: flex;
+    float: right;
+    border: 1px solid rgb(239,191,26);
+    border-radius: 10px;
+    background-color: white;
+}

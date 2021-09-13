@@ -1,0 +1,22 @@
+.main{
+   text-align: center;
+   padding-top: 3rem;
+}
+
+.mainLink{
+    text-align: center;
+    padding-top: 1rem;
+    margin-bottom: 3rem;
+ }
+ .mainLink a{
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-top: 15px;
+    padding-bottom: 5px;
+    text-decoration: none;
+    color: #606060;
+ }
+ .mainLink a:hover{
+    color: #bd8c11;
+    border-bottom: 1px solid #bd8c11;
+ }

@@ -1,0 +1,84 @@
+.navbar-brand img{
+    height:2.8rem;
+    width: 3rem;
+    margin-top: .2rem;
+    padding-right: 10px;
+} 
+.navbar-brand{
+    margin-left: none;
+}
+
+.cart-btn{
+    margin-right: none;
+    border-radius: 12px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: #F8F9FA;
+    border: rgb(214, 211, 211) 1px solid;
+}
+
+.cartLogo{
+    padding-right: 9px;
+}
+
+.badge{
+    padding: 5px 10px;
+    margin-left: 12px;
+    color: black;
+    border: rgb(239,191,26) 1px solid;
+}
+
+
+@media only screen and (min-width: 800px){
+    .navbar-brand{
+        margin-left: 20rem;
+    }
+    .cart-btn{
+        margin-right: 20rem;
+    }
+}
+
+@media screen and (min-width:500px) and (max-width:1000px){
+    .navbar-brand{
+        margin-left: 5rem;
+    }
+    .cart-btn{
+        margin-right: 5rem;
+    }
+ }
+
+@media only screen and (max-width: 332px){
+    .navbar-brand{
+        font-size: 1.1rem;
+    }
+    .cart-btn{
+        font-size: 1.1rem;
+    }
+}
+
+.btn-cancel{
+    color: black;
+    background-color: white;
+    border: 1px solid #ffdf7d;
+    padding: 9px 15px 9px 15px;
+}
+.btn-cancel:hover{
+    color: black;
+    background-color: #ffdf7d;
+    border: 1px solid #ffdf7d;
+}
+
+.btn-order{
+    color: black;
+    background-color: #ffdf7d;
+    border: 1px solid #ffdf7d;
+   padding: 9px 15px 9px 15px;
+}
+
+.btn-order:hover{
+    color: black;
+    background-color: #ffdf7d;
+    border: 1px solid #ffdf7d;
+}
