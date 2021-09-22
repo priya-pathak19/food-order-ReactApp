@@ -8,10 +8,12 @@ import logo from '../assets/logo.png';
 import cartLogo from '../assets/logo/cart.png';
 import './Navbar.css'
 import Context from '../store/context';
+import Checkout from '../Cart/Checkout'
 
 const NavbarHeader = (props)=> {
     
       const [modal, setModal] = useState(false);
+      const [isCheckout, setIsCheckout] = useState(false);
 
       const toggle = () => setModal(!modal);
 
@@ -22,6 +24,29 @@ const NavbarHeader = (props)=> {
       const ctxVal = ctx.items.reduce((curr, item)=>{
         return curr + item.amount;
       },0);
+
+      const orderHandler = () => {
+        setIsCheckout(true);
+      };
+
+      const modalActions = (
+        <React.Fragment>
+        <Button className="btn-cancel" onClick={toggle}>Cancel</Button>
+        {hasItems && <Button className="btn-order" onClick={orderHandler}>Order</Button>}
+        </React.Fragment>
+      )
+
+      const submitOrderHandler = async (userData) => {
+        await fetch('https://food-order-reactapp-default-rtdb.firebaseio.com/orders.json', {
+          method: 'POST',
+          body: JSON.stringify({
+            user: userData,
+            orderedItems: ctx.items,
+          }),
+        });
+        ctx.clearCart();
+        toggle();
+      };
 
     return(
         <React.Fragment>
@@ -43,11 +68,11 @@ const NavbarHeader = (props)=> {
         <ModalBody>
             <Cart/>
         </ModalBody>
-        <ModalFooter>
-          <Button className="btn-cancel" onClick={toggle}>Cancel</Button>
-          {hasItems && <Button className="btn-order" onClick={toggle}>Order</Button>}
-          
-        </ModalFooter>
+       
+        {isCheckout? <Checkout onConfirm={submitOrderHandler} onCancel={toggle}/> : 
+         <ModalFooter> {modalActions} </ModalFooter>}
+        
+        
       </Modal>
     </div>
             

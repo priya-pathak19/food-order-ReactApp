@@ -12,6 +12,7 @@ import MealItem from './MealItem';
 
 
 const AvailableMeals = () => {
+
     const mealItems = [
         {
             id: "1",

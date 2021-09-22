@@ -41,6 +41,10 @@ const Provider = props =>{
                totalAmount: state.totalAmount - state.items[index].price
             };
          }
+
+         if (action.type === 'CLEAR') {
+            return defaultState;
+          }
           return defaultState;
         };
         
@@ -54,11 +58,16 @@ const Provider = props =>{
         dispatch({type:"REMOVE", id: id})
     }
 
+    const clearCartHandler = () => {
+        dispatch({type: 'CLEAR'});
+      };
+
     const newContext = {
         items: cartState.items,
         totalAmount: cartState.totalAmount,
         addItems:  addItems,
-        removeItems: removeItems
+        removeItems: removeItems,
+        clearCart: clearCartHandler
     };
 
     return (
