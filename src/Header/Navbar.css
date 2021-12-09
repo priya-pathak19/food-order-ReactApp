@@ -82,3 +82,21 @@
     background-color: #ffdf7d;
     border: 1px solid #ffdf7d;
 }
+
+.order-form div{
+    display: flex;  
+    padding: 5px;
+    padding-left: 50px;
+    padding-right: 50px;
+    flex-direction: column;
+    justify-content: center;
+}
+.order-form label{
+    padding-bottom: 5px;
+}
+.order-form button{
+    margin-left: 50px;
+    /* margin: auto; */
+    margin-bottom: 10px;
+    margin-top: 10px;
+}

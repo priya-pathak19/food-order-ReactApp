@@ -3,8 +3,7 @@ import { Badge } from 'reactstrap';
 // import Context from '../store/context';
 
 const CartItem = props => {
-    const price = `$${Number(props.price).toFixed(2)}`;
-
+    const price = `$${props.price.toFixed(2)}`;
     return(
     <React.Fragment>
               <div>
