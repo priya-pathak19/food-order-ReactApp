@@ -25,7 +25,7 @@ const schema = yup.object().shape({
 
 const NavbarHeader = (props)=> {
 
-    const { register, handleSubmit, formState: { errors }  } = useForm({
+    const { register, handleSubmit,reset , formState: { errors }  } = useForm({
      resolver: yupResolver(schema),
     })
     
@@ -53,7 +53,7 @@ const NavbarHeader = (props)=> {
        }
 
 
-        await fetch('https://react-foodorder-ea422-default-rtdb.firebaseio.com/orders.json', {
+        const userSubmit = await fetch('https://react-foodorder-ea422-default-rtdb.firebaseio.com/orders.json', {
           method: 'POST',
           body: JSON.stringify({
             user : userdata,
@@ -63,7 +63,8 @@ const NavbarHeader = (props)=> {
         console.log(userdata)
         ctx.clearCart();
         toggle();
-        
+        reset(userSubmit);
+        setORderform(false);
       };
 
     
